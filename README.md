@@ -431,7 +431,7 @@ try {
     die();
 }`
 
-It was saved and close the file when editing was completed.
+The file was saved and closed when editing was completed.
 
 The web page can be accessed on the web brower by visiting the domain name or public IP address configured for your website, followed by `/todo_list.php:`
 
@@ -441,4 +441,4 @@ Output from web browser
 ![](Images/Final.png)
 
 # Summary 
-This project presents a the development of a flexible foundation for PHP websites and application using using Nginx as web server and MySQL as database management system.
+This project presents  the development of a flexible foundation for PHP websites and application using using Nginx as web server and MySQL as database management system.
