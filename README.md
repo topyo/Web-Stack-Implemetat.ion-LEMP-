@@ -103,7 +103,7 @@ IPv6
 
 Load balancing
 
-FastCGI support with caching![](Images/version.png)
+FastCGI support with caching
  
 TLS/SSL with SNI
 
@@ -153,7 +153,9 @@ The image below shows that the webserver is installed and accessible
 ### Good job! Now we have the LE components of LEMP stack installed 
 
 We proceed now to install 
+ 
 ## M- MySQL Database 
+ 
 MySQL is a relational database management system based on SQL – Structured Query Language. The application is used for a wide range of purposes, including data warehousing, e-commerce, and logging applications. The most common use for mySQL however, is for the purpose of a web database. MySQL Database Service is a fully managed database service to deploy cloud-native applications and it is used within the PHP environment. Now that a webserve is running,a database management system is required for storing and managing data.
 
 #### Step 1: MySQL can be installed by using the code
@@ -249,7 +251,7 @@ This will create a new blank file on the terminal and the code w. Paste in the f
 
 server {
     listen 80;
-    server_name projectLEMP www.proj![](Images/Config.png)ectLEMP;
+    server_name projectLEMP www.projectLEMP;
     root /var/www/projectLEMP;
 
     index index.html index.htm index.php;
