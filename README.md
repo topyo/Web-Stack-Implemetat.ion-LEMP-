@@ -1,7 +1,7 @@
 # Web Stack Implementation (LEMP Stack)
 In Project 1, Webstack Implementation (LAMP Stack) uisng AWS was considered. 
 Link to project 1 : https://github.com/topyo/Webstack-Implementation. 
-In Project 2, we will be considering the LEMP Stack Implentation using AWS. This project follows similar concepts as Project 1.
+In Project 2, we will be considering the LEMP Stack Implentation using AWS. This project follows similar concept as Project 1.
 
 ## What is a LEMP?
 LEMP is a deviation of the ubiquitary LAMP stack used for developing and deploying web applications.Generally, LAMP consists of Linux, Apache, MySQL, and PHP. Due to its flexibility, the components can easily be switched. With LEMP, Apache is replaced with the lightweight yet powerful Nginx.
@@ -57,7 +57,7 @@ For this project, we will be using the Ubuntu Server 20.04 LTS (HVM), SSD Volume
 #### Note 
 
 Before a virtual server is lauched, a key pair must be generated and downloaded. A key pair consists of a public key that AWS stores, and a private key file that users store. Together, they allow users to connect to their instance securely. For Windows AMIs, the private key file is required to obtain the password used to log into the instance. For Linux AMIs, the private key file allows users to securely SSH into their instance. Amazon EC2 supports ED25519 and RSA key pair types.(Amazon, 2022).
-*The key is very important- Please save the downloaded private key (.pem file) securely and do not share it with anyone! Connection to the server will never be possible again if it is lost!
+*The key is very important- Please save the downloaded private key (.pem file) secIn this project we have built a flexible foundation for serving PHP websites and applications to websvisitors,urely and do not share it with anyone! Connection to the server will never be possible again if it is lost!
 
 For this project,I used my existing key pair and acknowledged that I had access to the key
 ![](Images/Key.png)
