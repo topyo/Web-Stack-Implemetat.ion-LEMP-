@@ -104,6 +104,7 @@ IPv6
 Load balancing
 
 FastCGI support with caching![](Images/version.png)
+ 
 TLS/SSL with SNI
 
 Nginx Web Server will display the web page to site visitor. We will be using the following command to get Nginx Web Server installed. 
