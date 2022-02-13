@@ -388,3 +388,57 @@ Step 7 : Insert a few rows of content in the test table. You might want to repea
 To confirm that the data was successfully saved to your table, run:
 
 `mysql>  SELECT * FROM example_database.todo_list;`
+`mysql> INSERT INTO example_database.todo_list(content) VALUES ("My first Important Things to get completed in Six Months");`
+`mysql> INSERT INTO example_database.todo_list(content) VALUES ("Attend Cloud Engineering Bootcamp");`
+`mysql> INSERT INTO example_database.todo_list(content) VALUES ("Complete all Project");`
+`mysql> INSERT INTO example_database.todo_list(content) VALUES ("AWS-SA Exam");`
+`
+![](Images/List.png)
+
+To confirm that the data was successfully saved to your table, run:
+
+mysql> SELECT * FROM example_database.todo_list;
+And the output is shown below
+
+![](Images/Complete.png)
+
+After confirming that there is a  valid data in your test table, you can exit the MySQL console using the command
+
+`mysql> exit`
+### Create a PHP script that will connect to MySQL and query for your content. 
+
+To create a new PHP file in the custom web root directory . We’ll use vi for that:
+
+`$ vi/var/www/projectLEMP/todo_list.php`
+![](Images/TODO.png)
+
+ The below content was typed into the`todo_list.php` script:
+
+`<?php
+$user = "example_user";
+$password = "password";
+$database = "example_database";
+$table = "todo_list";`
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+    echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}`
+
+It was saved and close the file when editing was completed.
+
+The web page can be accessed on the web brower by visiting the domain name or public IP address configured for your website, followed by `/todo_list.php:`
+
+`http://<Public_domain_or_IP>/todo_list.php`
+
+Output from web browser 
+![](Images/Final.png)
+
+# Summary 
+This project presents a the development of a flexible foundation for PHP websites and application using using Nginx as web server and MySQL as database management system.
