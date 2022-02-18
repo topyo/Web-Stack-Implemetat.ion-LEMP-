@@ -487,4 +487,4 @@ Output from web browser
 
 # Summary 
 This project presents the development of a flexible foundation for PHP websites and application using using Nginx as web server and MySQL as database management system.
-![](Images/version.png) 
+
