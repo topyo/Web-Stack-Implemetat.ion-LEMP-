@@ -1,10 +1,10 @@
 # Web Stack Implementation (LEMP Stack)
-In Project 1, I implemented LAMP Webs Stack uisng AWS Cloud Services. 
-Link to project 1 : https://github.com/topyo/Webstack-Implementation. 
-In Project 2, I will be implementing the LEMP Stack using AWS. This project follows similar concept as Project 1.
+In Project 1, I implemented the LAMP Web Stack uisng AWS Cloud Services. Here is the link to project 1 : https://github.com/topyo/Webstack-Implementation
+
+In Project 2, I will be implementing the LEMP Stack using AWS Cloud Services. This project follows similar concept as Project 1.
 
 ## What is a LEMP?
-LEMP is a deviation of the ubiquitary LAMP stack used for developing and deploying web applications. Generally, LAMP consists of Linux, Apache, MySQL, and PHP. Due to its flexibility, the components can easily be switched. With LEMP, Apache is replaced with the lightweight yet powerful Nginx.
+LEMP is a deviation of the ubiquitary LAMP stack. It is used for developing and deploying web applications. Generally, LAMP consists of Linux, Apache, MySQL, and PHP. Due to its flexibility, the components can easily be switched. With LEMP, Apache is replaced with the lightweight yet powerful Nginx.
 
 ![](Images/Nginx.png)
 
