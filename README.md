@@ -36,34 +36,47 @@ PHP is a server-side scripting language designed for web development. The script
 A major prerequsite to complete this project is having an AWS account.
 
 ## AWS Account
-For new users, please use the link 
+For new users, please use the link below to create a new account 
+
+
 https://aws.amazon.com/account/sign-up
 
-For video tutorial on how to create an AWS account
+
+For video tutorial on how to create an AWS account use the link 
+
+
 https://www.youtube.com/watch?v=v3WLJ_0hnOU.
 
-I created my AWS account ealier and I have described the steps used in project 1. Please note that signing in using IAM user is the best practice 
- Documentation to show the reasons to use IAM user https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+I created my AWS account ealier and I have described the steps used in project 1. Please note that signing in into AWS using IAM user is the best practice 
+ 
+ Documentation to show the reasons to use IAM user:  https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 
 ![](Images/IAM.png)
 
 ## L- Linux Operating System
 The L in LEMP is Linux. This is the operating system for this stack and this will be installed by launching an EC2 instance with ubuntu as the flavor on AWS. I used the steps below to accomplish that
 
-First I selected an Amazon Machine Image
-For this project, I will be using the Ubuntu Server 20.04 LTS (HVM), SSD Volume Type - ami-0aee2d0182c9054ac (64-bit x86) / ami-04e842c4cdd82c62e (64-bit Arm) as the Amazon Machine Image (AMI)
+First I selected an Amazon Machine Image. For this project, I will be using the Ubuntu Server 20.04 LTS (HVM), SSD Volume Type - ami-0aee2d0182c9054ac (64-bit x86) / ami-04e842c4cdd82c62e (64-bit Arm) as the Amazon Machine Image (AMI)
+
 
 ![](Images/AMI.png)
 
 Then I chose the Instance type
+
+
 ![](Images/Instance.png)
 
-I Lauched the EC2 
+Lauched the EC2 
+
 ![](Images/ClickLaunch.png)
+
 ![](Images/Launch2.png)
 
-and Finally I checked  Launch Status to see if the EC2 instance launched
+and Finally I checked the status of the launched EC2 instance by clicking the Launch Status 
+
+
 ![](Images/LaunchSatus.png)
+
 ![](Images/LS.png)
 
 #### Note 
@@ -72,35 +85,41 @@ Before a virtual server is lauched, a key pair must be generated and downloaded.
 *The key is very important- Please save the downloaded private key (.pem file) and do not share it with anyone! Connection to the server will never be possible again if it is lost!
 
 For this project,I used my existing key pair and acknowledged that I have access to the key
+
+
 ![](Images/Key.png)
 
 
 
 ## Connecting to EC2 Instance
-After launching the EC2 Instance on AWS, it is essential to connect to the EC2 Instance via the terminal. The steps below is used to achieve the connection  
-1. Type cd Downloads into the local PC linux terminal (This command allows a change of directory to where the downloaded PEM file is saved). 
+After launching the EC2 Instance on AWS, it is essential to connect to the EC2 Instance via the terminal. I used the steps below to achieve the connection.
+
+Step 1: I typed cd Downloads into my local PC linux terminal (This command allows a change of directory to where the downloaded PEM file is saved) 
 
 ##### Command : cd~/Downloads
-2. Type $ sudo chmod 0400 < downloaded private-key-name>.pem ( This command changes the permissions for the private key(.pem) file)
 
-Note: if this permisions are not changed an error called "Bad permissions" will be displayed. The anchor tags < > means the content in the anchor needs to be replaced by user. For example, using the above command, a user needs to replace the private key to the name it was saved with on their system during the earlier download. If the downloaded private key was saved/ named as Privatekey1.pem that means the above command will now be
+Step 2: I typed $ sudo chmod 0400 < downloaded private-key-name>.pem ( This command changes the permissions for the private key(.pem) file)
+
+Note: if the permisions are not changed an error called "Bad permissions" will be displayed. The anchor tags < > means the content in the anchor needs to be replaced. For example, using the above command, I replaced the private key to the name I saved it with during the earlier download. I saved the downloaded as Privatekey1.pem that means the above command will now be
 
 sudo chmod 0400 Privatekey1.pem
 
-3. Type ssh -i <Your-private-key.pem> ubuntu@<EC2-Public-IP-address>
+Step 3: I typed ssh -i <Your-private-key.pem> ubuntu @ EC2-Public-IP-address
 
 ![](Images/PrivateKey.png)
 
+Note: The Public-IP-address is from the AWS EC2 instance
+
 On the local PC linux terminal, we have the below after completing the above steps
+
 ![](Images/EC2K.png)
 
 
-Following the above steps we now have the 
+Following the above steps I now have the 
 #### L- Linux Operating System component is installed.
 
 ## Installing the Nginx Web Server
-The next component of the stack of is
-# E- Nginx Server
+The next component of the stack I installed is  # E- Nginx Server
 Nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
 ### How Does Nginx Work?
 Nginx is built to offer low memory usage and high concurrency. Rather than creating new processes for each web request, Nginx uses an asynchronous, event-driven approach where requests are handled in a single thread. With Nginx, one master process can control multiple worker processes. The master maintains the worker processes, while the workers do the actual processing. Because Nginx is asynchronous, each request can be executed by the worker concurrently without blocking other requests.
