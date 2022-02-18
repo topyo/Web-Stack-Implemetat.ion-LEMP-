@@ -207,6 +207,7 @@ When prompted, confirm installation by typing Y, and then ENTER.
 
 
 #### Step 2: Running Security Script
+
 Best prectice after installation of mysql software is for security script to be run. The code 
 
 
@@ -214,12 +215,11 @@ $ sudo mysql_secure_installation
 
 installs the security script and removes some insecure default settings and lock down access to the database system. 
 
-##### N.B While running the script
-VALIDATE PASSWORD PLUGIN is asked.Enabling this feature subjective. If enabled, passwords which don’t match the specified criteria will be rejected by MySQL with an error. However, It is safe to leave validation disabled, but a strong and unique passwords should always be used for database credentials.
+##### N.B While running the script, VALIDATE PASSWORD PLUGIN is asked.Enabling this feature is subjective. If enabled, passwords which don’t match the specified criteria will be rejected by MySQL with an error. However, It is safe to leave validation disabled, but a strong and unique passwords should always be used for database credentials.
 
 ![](Images/Validate.png)
 
-For other questions press Y and hit the ENTER key at each prompt.This removes some anonymous users, the test database, disable remote root logins, and load these new rules so that MySQL immediately will accept the changes made.
+For other questions I typed Y and hit the ENTER key at each prompt.This removes some anonymous users, the test database, disable remote root logins, and load these new rules so that MySQL immediately will accept the changes made.
 
 ![](Images/yes.png)
 
@@ -228,11 +228,11 @@ For other questions press Y and hit the ENTER key at each prompt.This removes so
 
 #### Step 3 Testing 
 
-The command 
+I used the command 
 
 $ sudo mysql
 
-is used to test if the database was installed properly and also to  test if MySQL consol can be logged into.
+ to test if the database was installed properly and also to  test if MySQL consol can be logged into.
 
 The ouput is 
 
@@ -240,7 +240,7 @@ The ouput is
 
 #### Step 4  Exit MySql 
 
-To exit MySQL the command used is 
+To exit MySQL I typed exit into the terminal 
 
 mysql> exit
 
@@ -260,12 +260,10 @@ $ sudo apt install php libapache2-mod-php php-mysql
 
 ![](Images/installphp.png)
 
-Enter Y when a prompt is asked for installation continuation and ENTER to confirm installation
+I entered Y when a prompt is asked for installation continuation and ENTER to confirm installation
 ![](Images/Confirmation.png)
 
-#### Excellent Work! Now we have the LEMP stacked installed. Now we need to configure NGNIX to use PHP Processor
-
- Configuring Nginx to Use PHP Processor
+####  Now the LEMP stacked installed.  After installing the LEMP stack, I configured NGNIX to use the PHP Processor
 
 ### Configuring Nginx to Use PHP Processor
  Nginx web server can  be used  to create server blocks to encapsulate configuration details and host more than one domain on a single server.This is similar to virtual host in Apache.
