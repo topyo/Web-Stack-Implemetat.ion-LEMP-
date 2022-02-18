@@ -11,13 +11,19 @@ LEMP is a deviation of the ubiquitary LAMP stack. It is used for developing and 
 ## LEMP Naming / Pronounciation Convention
 LEMP is used due to the pronunciation for Nginx: Engine-X (en-juhn-ecks). Consider this, In English language, the article "an" is used instead of "a" for hour even though it begins with a consonant. The importance is the sound of the first letter rather than its written representation. Besides, LEMP is actually pronounceable and doesn’t sound like reciting the alphabet (LEMP, 2021). The term LEMP is an acronym that represents L for the Linux Operating system, Nginx (pronounced as engine-x, hence the E in the acronym) web server, M for MySQL database, and P for PHP scripting language.
 
-## LEMP Stands For:
+## LEMP stands for:
 ## L- Linux Operating System
 ## E- Nginx Server
 ## M- MySQL Database
 ## P- PHP
+
+
+
 ## Linux
-Linux is an open source Unix-like operating system . It provides the base for the stack components and many distributions including package management systems that make installing the desired applications easy. However, these repository versions will generally not be the most current. Two of the most commonly used Linux distributions in LEMP stacks are Debian and Ubuntu (LEMP,2021)![](Images/version.png)MAP protocols. It also functions as a load balancer, HTTP cache, and web server (origin server). It has a strong focus on high concurrency, high performance and low memory usage. The HTML5 Boilerplate project has sample server configuration files to improve performance and security (LEMP, 2021)
+Linux is an open source Unix-like operating system that provides the base for the stack components, many distributions and package management systems. Two of the most commonly used Linux distributions in LEMP stacks are Debian and Ubuntu. 
+
+## Nginx
+Nginx is an open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols. It also functions as a load balancer, HTTP cache, and web server (origin server). It has a strong focus on high concurrency, high performance and low memory usage. The HTML5 Boilerplate project has sample server configuration files to improve performance and security (LEMP, 2021)
 
 ## MySQL
 
@@ -27,25 +33,24 @@ MySQL is the second most widely used open source relational database management 
 PHP is a server-side scripting language designed for web development. The scripting role can also be filled with Python or Perl. Servers such as Gunicorn or uWSGI can be used in conjunction with Nginx to serve these applications (LEMP, 2021)
 
 # LEMP Implementation using AWS 
-A major prerequsite for completing this project is having an AWS account. For new users, here is the link to create an AWS account. 
+A major prerequsite to complete this project is having an AWS account.
+
 ## AWS Account
-To create an AWS account, please use the link 
+For new users, please use the link 
 https://aws.amazon.com/account/sign-up
 
 For video tutorial on how to create an AWS account
 https://www.youtube.com/watch?v=v3WLJ_0hnOU.
 
-I created my AWS account ealier and I have described the steps used in project 1
-![](Images/version.png). 
-Please note that signing in using IAM user is the best practice https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+I created my AWS account ealier and I have described the steps used in project 1. Please note that signing in using IAM user is the best practice 
+ Documentation to show the reasons to use IAM user https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 
 ![](Images/IAM.png)
 
 ## L- Linux Operating System
 The L in LEMP is Linux. This is the operating system for this stack and this will be installed by launching an EC2 instance with ubuntu as the flavor on AWS. I used the steps below to accomplish that
-![](Images/version.png)
 
- First I selected an Amazon Machine Image
+First I selected an Amazon Machine Image
 For this project, I will be using the Ubuntu Server 20.04 LTS (HVM), SSD Volume Type - ami-0aee2d0182c9054ac (64-bit x86) / ami-04e842c4cdd82c62e (64-bit Arm) as the Amazon Machine Image (AMI)
 
 ![](Images/AMI.png)
@@ -445,3 +450,4 @@ Output from web browser
 
 # Summary 
 This project presents  the development of a flexible foundation for PHP websites and application using using Nginx as web server and MySQL as database management system.
+![](Images/version.png) 
