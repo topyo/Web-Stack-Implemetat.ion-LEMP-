@@ -215,7 +215,7 @@ $ sudo mysql_secure_installation
 
 installs the security script and removes some insecure default settings and lock down access to the database system. 
 
-##### N.B While running the script, VALIDATE PASSWORD PLUGIN is asked.Enabling this feature is subjective. If enabled, passwords which don’t match the specified criteria will be rejected by MySQL with an error. However, It is safe to leave validation disabled, but a strong and unique passwords should always be used for database credentials.
+##### N.B When the script is running, VALIDATE PASSWORD PLUGIN is asked.Enabling this feature is subjective. If enabled, passwords which don’t match the specified criteria will be rejected by MySQL with an error. However, It is safe to leave validation disabled, but a strong and unique passwords should always be used for database credentials.
 
 ![](Images/Validate.png)
 
@@ -357,7 +357,7 @@ http://<Public-IP-Address>:80
 
 
 ## Testing PHP with Nginx
-Now that the LAMP stack is completely installed and fully operational.Testing can be completed to validate that Nginx can correctly handle the  `.php` files off to the PHP processor.
+Now that the LAMP stack is completely installed and fully operational. Testing can be completed to validate that Nginx can correctly handle the  `.php` files off to the PHP processor.
 This can be done by creating a test PHP file in the document root. 
  
 To get this completed, I typed `info.php` into the new file  within the document root of the text editor 
@@ -375,18 +375,21 @@ N.B : For privacy, I covered some contents in the page
 
 ## Retrieving data from MySQL database with PHP
  
-Before we start retrieving data from MySQL data with with PHP,we will first create a test database with a simple "To do list" and configure access so Nginx website would be able to query data from the DB and display the query.
-Note: The native MySQL PHP library mysqlnd doesn’t support caching_sha2_authentication at the time of completing this project therfore the default authentication method for MySQL 8 was used.
-### Step 1 : connect to the MySQL console using the root account using the command
+Before I started retrieving data from MySQL with PHP, I created a test database with a simple "To do list" and configured access so Nginx website would be able to query data from the DB and display the query.
+Note: The native MySQL PHP library mysqlnd doesn’t support caching_sha2_authentication at the time of completing this project therfore  I used the default authentication method for MySQL 8. 
+ 
+## Steps to create a test database
+ 
+### Step 1 :Connected to the MySQL console using the root account using the command
 
 $ sudo mysql
 
-### Step 2: Create a new database and run the following command from your MySQL console:
+### Step 2: Created a new database and run the following command from your MySQL console:
 
 mysql> CREATE DATABASE `example_database`;
 
-### Step 3: Create a new user and grant them full privileges on the database
-The following command creates a new user named `example_user`, using mysql_native_password as default authentication method. We’re defining this user’s password as `password`, but this  should replaced to a secured password for security purposes
+### Step 3: Created a new user and granted them full privileges on the database
+The following command created a new user named `example_user`, using mysql_native_password as default authentication method. I defined this user’s password as `password`, but this  should replaced to a secured password for security purposes.
 
 mysql>  CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
 ### Step 4: Give user permission to "example_database" database using the command:
@@ -395,15 +398,17 @@ mysql> GRANT ALL ON example_database.* TO 'example_user'@'%';
 
 This will give "example_user" the full privileges over the "example_database" database, while preventing this user from creating or modifying other databases on your server.
 
-Now exit the MySQL shell with:
+Now I exited the MySQL shell with:
 
 `mysql> exit`
+ 
 ### Step 5: To test if the new user has the proper permissions, 
-We log  in to the MySQL console again, this time using the custom user credentials:
+ 
+I logged in to the MySQL console again, this time using the custom user credentials:
 
 `$ mysql -u example_user -p`
 
-The `-p` flag in this command, gave the prompt for the password used when creating the `example_user` user. After logging in to the MySQL console, confirm that you have access to the `example_database` database using the command
+The `-p` flag in this command, gave the prompt for the password used when creating the `example_user` user. After logging in to the MySQL console, I confirmed that I had access to the `example_database` database using the command
 
 ![](Images/Login.png.png)
 
@@ -413,19 +418,19 @@ output
 
 ![](Images/Show.png)
 
-### Step 6 : Create a test table named todo_list. From the MySQL console, run the following statement:
+### Step 6 : Created a test table named todo_list. From the MySQL console, run the following statement:
 
 CREATE TABLE example_database.todo_list ( mysql> item_id INT AUTO_INCREMENT, mysql> content VARCHAR(255), mysql> PRIMARY KEY(item_id) mysql> );
 
-Note: Please type the above statment to prevent error output
+Note: I typed the above statment to prevent error output, if using this command typing is prevents getting back an error message
 
 ![](Images/create.png)
 
-Step 7 : Insert a few rows of content in the test table. You might want to repeat the next command a few times, using different VALUES:
+Step 7 : Inserted a few rows of content in the test table. I repeated the next command a few times, using different VALUES:
 
 `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");`
 
-To confirm that the data was successfully saved to your table, run:
+To confirm that the data was successfully saved to the table, I typed the below command:
 
 `mysql>  SELECT * FROM example_database.todo_list;`
 `mysql> INSERT INTO example_database.todo_list(content) VALUES ("My first Important Things to get completed in Six Months");`
@@ -435,19 +440,19 @@ To confirm that the data was successfully saved to your table, run:
 `
 ![](Images/List.png)
 
-To confirm that the data was successfully saved to your table, run:
+To confirm that the data was successfully saved to the table, I typed:
 
 mysql> SELECT * FROM example_database.todo_list;
 And the output is shown below
 
 ![](Images/Complete.png)
 
-After confirming that there is a  valid data in your test table, you can exit the MySQL console using the command
+After confirming that there is a  valid data in the test table, I exited the MySQL console using the command
 
 `mysql> exit`
-### Create a PHP script that will connect to MySQL and query for your content. 
+### Created a PHP script that will connect to MySQL and query for the content. 
 
-To create a new PHP file in the custom web root directory . We’ll use vi for that:
+To create a new PHP file in the custom web root directory . I used vi for that:
 
 `$ vi/var/www/projectLEMP/todo_list.php`
 ![](Images/TODO.png)
@@ -481,5 +486,5 @@ Output from web browser
 ![](Images/Final.png)
 
 # Summary 
-This project presents  the development of a flexible foundation for PHP websites and application using using Nginx as web server and MySQL as database management system.
+This project presents the development of a flexible foundation for PHP websites and application using using Nginx as web server and MySQL as database management system.
 ![](Images/version.png) 
