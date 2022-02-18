@@ -1,15 +1,15 @@
 # Web Stack Implementation (LEMP Stack)
-In Project 1, Webstack Implementation (LAMP Stack) uisng AWS was considered. 
+In Project 1, I implemented LAMP Webs Stack uisng AWS Cloud Services. 
 Link to project 1 : https://github.com/topyo/Webstack-Implementation. 
-In Project 2, we will be considering the LEMP Stack Implentation using AWS. This project follows similar concept as Project 1.
+In Project 2, I will be implementing the LEMP Stack using AWS. This project follows similar concept as Project 1.
 
 ## What is a LEMP?
-LEMP is a deviation of the ubiquitary LAMP stack used for developing and deploying web applications.Generally, LAMP consists of Linux, Apache, MySQL, and PHP. Due to its flexibility, the components can easily be switched. With LEMP, Apache is replaced with the lightweight yet powerful Nginx.
+LEMP is a deviation of the ubiquitary LAMP stack used for developing and deploying web applications. Generally, LAMP consists of Linux, Apache, MySQL, and PHP. Due to its flexibility, the components can easily be switched. With LEMP, Apache is replaced with the lightweight yet powerful Nginx.
 
 ![](Images/Nginx.png)
 
-## Naming / Pronounciation Convention
-LEMP is used due to the pronunciation for Nginx: Engine-X (en-juhn-ecks). Think of this, In English, the article an is used instead of a for hour even though it begins with a consonant. The importance is the sound of the first letter rather than its written representation. Besides, LEMP is actually pronounceable and doesn’t sound like reciting the alphabet (LEMP, 2021). The term LEMP is an acronym that represents L for the Linux Operating system, Nginx (pronounced as engine-x, hence the E in the acronym) web server, M for MySQL database, and P for PHP scripting language.
+## LEMP Naming / Pronounciation Convention
+LEMP is used due to the pronunciation for Nginx: Engine-X (en-juhn-ecks). Consider this, In English language, the article "an" is used instead of "a" for hour even though it begins with a consonant. The importance is the sound of the first letter rather than its written representation. Besides, LEMP is actually pronounceable and doesn’t sound like reciting the alphabet (LEMP, 2021). The term LEMP is an acronym that represents L for the Linux Operating system, Nginx (pronounced as engine-x, hence the E in the acronym) web server, M for MySQL database, and P for PHP scripting language.
 
 ## LEMP Stands For:
 ## L- Linux Operating System
@@ -35,34 +35,37 @@ https://aws.amazon.com/account/sign-up
 For video tutorial on how to create an AWS account
 https://www.youtube.com/watch?v=v3WLJ_0hnOU.
 
-Since I have created an AWS account ealier, process was shown in project 1![](Images/version.png)M user is the best practice https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+I created my AWS account ealier and I have described the steps used in project 1
+![](Images/version.png). 
+Please note that signing in using IAM user is the best practice https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
 
 ![](Images/IAM.png)
 
 ## L- Linux Operating System
-The L in LEMP is Linux. This is the operating system for this stack and this will be installed by launching an EC2 instance with ubuntu as the flavor. The following the steps is use![](Images/version.png)
+The L in LEMP is Linux. This is the operating system for this stack and this will be installed by launching an EC2 instance with ubuntu as the flavor on AWS. I used the steps below to accomplish that
+![](Images/version.png)
 
-3. Choose an Amazon Machine Image
-For this project, we will be using the Ubuntu Server 20.04 LTS (HVM), SSD Volume Type - ami-0aee2d0182c9054ac (64-bit x86) / ami-04e842c4cdd82c62e (64-bit Arm) the Amazon Machine Image (AMI)
+ First I selected an Amazon Machine Image
+For this project, I will be using the Ubuntu Server 20.04 LTS (HVM), SSD Volume Type - ami-0aee2d0182c9054ac (64-bit x86) / ami-04e842c4cdd82c62e (64-bit Arm) as the Amazon Machine Image (AMI)
 
 ![](Images/AMI.png)
 
-4. Choose Instance type
+Then I chose the Instance type
 ![](Images/Instance.png)
 
-5. Lauch 
+I Lauched the EC2 
 ![](Images/ClickLaunch.png)
 ![](Images/Launch2.png)
 
 #### Note 
 
 Before a virtual server is lauched, a key pair must be generated and downloaded. A key pair consists of a public key that AWS stores, and a private key file that users store. Together, they allow users to connect to their instance securely. For Windows AMIs, the private key file is required to obtain the password used to log into the instance. For Linux AMIs, the private key file allows users to securely SSH into their instance. Amazon EC2 supports ED25519 and RSA key pair types.(Amazon, 2022).
-*The key is very important- Please save the downloaded private key (.pem file) secIn this project we have built a flexible foundation for serving PHP websites and applications to websvisitors,urely and do not share it with anyone! Connection to the server will never be possible again if it is lost!
+*The key is very important- Please save the downloaded private key (.pem file) and do not share it with anyone! Connection to the server will never be possible again if it is lost!
 
-For this project,I used my existing key pair and acknowledged that I had access to the key
+For this project,I used my existing key pair and acknowledged that I have access to the key
 ![](Images/Key.png)
 
-6. Launch Status
+and Finally I checked  Launch Status to see if the EC2 instance launched
 ![](Images/LaunchSatus.png)
 ![](Images/LS.png)
 
