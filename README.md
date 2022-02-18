@@ -115,12 +115,14 @@ On the local PC linux terminal, we have the below after completing the above ste
 ![](Images/EC2K.png)
 
 
-Following the above steps I now have the 
-#### L- Linux Operating System component is installed.
+Following the above steps the L- Linux Operating System component is installed.
 
 ## Installing the Nginx Web Server
-The next component of the stack I installed is  # E- Nginx Server
+
+The next component of the stack is # E- Nginx Server
+
 Nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
+
 ### How Does Nginx Work?
 Nginx is built to offer low memory usage and high concurrency. Rather than creating new processes for each web request, Nginx uses an asynchronous, event-driven approach where requests are handled in a single thread. With Nginx, one master process can control multiple worker processes. The master maintains the worker processes, while the workers do the actual processing. Because Nginx is asynchronous, each request can be executed by the worker concurrently without blocking other requests.
 
@@ -136,13 +138,13 @@ FastCGI support with caching
  
 TLS/SSL with SNI
 
-Nginx Web Server will display the web page to site visitor. We will be using the following command to get Nginx Web Server installed. 
+Nginx Web Server will be used to display the web page to site visitor. The following steps were carried out to install Nginx
 
-Nginx can be installed using the Ubuntu's package manager ‘apt’
-Step 1: Update the list of packages in package manager using the command
 
+Step 1: Update the list of packages in package manager using the command 
 
 sudo apt update
+
 ![](Images/apt.png)
 
 Step 2: Run Nginx package installation with command 
@@ -158,12 +160,13 @@ sudo systemctl status nginx
 A green dot shows that the server is running and the webserver was correctly launched in the cloud.
 
 ![](Images/verify.png)
-![](Images/version.png)und connection through port 80.
+![](Images/version.png)
 
 Open Port 80
 ![](Images/Rules.png)
 
-The server is running and can be accessed locally from the Internet (Source 0.0.0.0/0 means ‘from any IP address’). The below command is used to check how it can be accessed locally in the Ubuntu shell.
+The server is running and can be accessed locally from the Internet (Source 0.0.0.0/0 means ‘from any IP address’).
+The below command is used to check how it can be accessed locally in the Ubuntu shell.
 
 $ curl http://localhost:80   
 or 
@@ -173,21 +176,27 @@ $ curl http://127.0.0.1:80`
 The above command typically produces same result, however, the first command accesses the server through the DNS name while the second command accessing the sever using an IP address (in this case IP address 127.0.0.1 corresponds to DNS name ‘localhost’ and the process of converting a DNS name to IP address is called “resolution”).
 
 ### Verification
-After the port 80 is opened, the next step is to verify if  Nginx  server can recieve and respond to request from the internet. A IP address below was used for the verification http://99.79.60.244
+After the port 80 is opened, the next step is to verify if Nginx server can recieve and respond to request from the internet. I used the puvlic IP address from the EC2 instance for the verification http://99.79.60.244
 
 The image below shows that the webserver is installed and accessible
 
 ![](Images/NGINXSHOW.png)
 
-### Good job! Now we have the LE components of LEMP stack installed 
+### Now the LE components of "LEMP" stack is installed 
 
-We proceed now to install 
+
+ ## Installing MySQL Database
+ 
+ 
+The next component of the stack is # M- MySQL Database
  
 ## M- MySQL Database 
  
 MySQL is a relational database management system based on SQL – Structured Query Language. The application is used for a wide range of purposes, including data warehousing, e-commerce, and logging applications. The most common use for mySQL however, is for the purpose of a web database. MySQL Database Service is a fully managed database service to deploy cloud-native applications and it is used within the PHP environment. Now that a webserve is running,a database management system is required for storing and managing data.
 
-#### Step 1: MySQL can be installed by using the code
+### Steps to installing MySQl
+
+#### Step 1:
 
 sudo apt install mysql-server
 
@@ -205,7 +214,7 @@ $ sudo mysql_secure_installation
 
 installs the security script and removes some insecure default settings and lock down access to the database system. 
 
-##### N.B While running the script,
+##### N.B While running the script
 VALIDATE PASSWORD PLUGIN is asked.Enabling this feature subjective. If enabled, passwords which don’t match the specified criteria will be rejected by MySQL with an error. However, It is safe to leave validation disabled, but a strong and unique passwords should always be used for database credentials.
 
 ![](Images/Validate.png)
@@ -230,14 +239,16 @@ The ouput is
 ![](Images/version.png)
 
 #### Step 4  Exit MySql 
+
 To exit MySQL the command used is 
 
 mysql> exit
 
 ![](Images/exit.png)
 
-Wow! We now have the LEM components of the LEMP stack installed. 
-Now we now install the last component 
+Now the LEM components of the LEMP stack installed. 
+
+The last component of the stack is P-PHP
 
 ## P- PHP
 
