@@ -62,6 +62,10 @@ I Lauched the EC2
 ![](Images/ClickLaunch.png)
 ![](Images/Launch2.png)
 
+and Finally I checked  Launch Status to see if the EC2 instance launched
+![](Images/LaunchSatus.png)
+![](Images/LS.png)
+
 #### Note 
 
 Before a virtual server is lauched, a key pair must be generated and downloaded. A key pair consists of a public key that AWS stores, and a private key file that users store. Together, they allow users to connect to their instance securely. For Windows AMIs, the private key file is required to obtain the password used to log into the instance. For Linux AMIs, the private key file allows users to securely SSH into their instance. Amazon EC2 supports ED25519 and RSA key pair types.(Amazon, 2022).
@@ -70,12 +74,10 @@ Before a virtual server is lauched, a key pair must be generated and downloaded.
 For this project,I used my existing key pair and acknowledged that I have access to the key
 ![](Images/Key.png)
 
-and Finally I checked  Launch Status to see if the EC2 instance launched
-![](Images/LaunchSatus.png)
-![](Images/LS.png)
+
 
 ## Connecting to EC2 Instance
-After launching the EC2 Instance on AWS, it is essential to connect to the EC2 Instance via terminal. The steps below is used to achieve the connection  
+After launching the EC2 Instance on AWS, it is essential to connect to the EC2 Instance via the terminal. The steps below is used to achieve the connection  
 1. Type cd Downloads into the local PC linux terminal (This command allows a change of directory to where the downloaded PEM file is saved). 
 
 ##### Command : cd~/Downloads
