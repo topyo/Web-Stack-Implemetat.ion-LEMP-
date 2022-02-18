@@ -263,13 +263,12 @@ $ sudo apt install php libapache2-mod-php php-mysql
 I entered Y when a prompt is asked for installation continuation and ENTER to confirm installation
 ![](Images/Confirmation.png)
 
-####  Now the LEMP stacked installed.  After installing the LEMP stack, I configured NGNIX to use the PHP Processor
+####  Now the LEMP stacked installed.  
+
+After installing the LEMP stack, I configured NGNIX to use the PHP Processor
 
 ### Configuring Nginx to Use PHP Processor
- Nginx web server can  be used  to create server blocks to encapsulate configuration details and host more than one domain on a single server.This is similar to virtual host in Apache.
- In this project, LEMPStack will be used as the domain
-
-On Ubuntu 20.04, Nginx has one server block enabled by default and is configured to serve documents out of a directory at /var/www/html. While this works well for a single site, it can become difficult to manage if multiple sites are hosted. Instead of modifying /var/www/html, a new directory structure will be created within /var/www for the your_domain website, leaving /var/www/html in place as the default directory to be served if a client request does not match any other sites
+ Nginx web server can  be used  to create server blocks to encapsulate configuration details and host more than one domain on a single server.This is similar to virtual host in Apache. In this project, I used LEMPStack as the domain name. On Ubuntu 20.04, Nginx has one server block enabled by default and is configured to serve documents out of a directory at /var/www/html. While this works well for a single site, it can become difficult to manage if multiple sites are hosted. Instead of modifying /var/www/html, a new directory structure will be created within /var/www for the your_domain website, leaving /var/www/html in place as the default directory to be served if a client request does not match any other sites
 The configuration steps includes
 
 ### Step 1: Create the root web directory for your_domain using
@@ -279,7 +278,7 @@ $ sudo mkdir /var/www/LEMPStack
 
 $ sudo chown -R $USER:$USER /var/www/LEMPStack
 
-### Step 3 :Open a new configuration file in Nginx’s `sites-available` directory using `nano`
+### Step 3 : Open a new configuration file in Nginx’s `sites-available` directory using `nano`
 
 `$ sudo nano /etc/nginx/sites-available/LEMPStack`
 
@@ -317,8 +316,9 @@ They code above means:
 - `listen` — Defines what port Nginx will listen on. In this case, it will listen on port `80`, the default port for HTTP.
 - `root` — Defines the document root where the files served by this website are stored.
 - `index`— Defines in which order Nginx will prioritize index files for this website. It is a common practice to list `index.html` files with a higher precedence than `index.php` files to allow for quickly setting up a maintenance landing page in PHP applications. You can adjust these settings to better suit your application needs.
+- 
 - `server_name` — Defines which domain names and/or IP addresses this server block should respond to i.e.
-#### Point this directive to your server’s domain name or public IP address.
+#### Point this directive to the server’s domain name or public IP address.
 - `location /` — The first location block includes a `try_files` directive, which checks for the existence of files or directories matching a URI request. If Nginx cannot find the appropriate resource, it will return a 404 error.
 - `location ~ \.php$` — This location block handles the actual PHP processing by pointing Nginx to the fastcgi-php.conf configuration file and the `php7.4-fpm.sock file`, which declares what socket is associated with `php-fpm`.
 - `location ~ /\.ht`— The last location block deals with `.htaccess` files, which Nginx does not process. By adding the deny all directive, if any `.htaccess` files happen to find their way into the document root ,they will not be served to visitors.
@@ -330,7 +330,9 @@ $ sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
 Test for Sybtax error using the command 
 
 $ sudo nginx -t
+
 ![](Images/ok.png)
+
 ### Step 6: Disable default Nginx host that is currently configured to listen on port 80, for this run using the command
 
 sudo unlink /etc/nginx/sites-enabled/default
@@ -338,12 +340,12 @@ sudo unlink /etc/nginx/sites-enabled/default
 ### Step 7: Apply Changes using the command 
 $ sudo systemctl reload nginx
 The new website is now active, but the web root /var/www/projectLEMP is still empty. 
-so we create an index.html file in that location so that we can test that the new server block works as expected using the command:
+so I created an index.html file in that location so I can test that the new server block works as expected using the command:
 
 sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/LEMPStack/index.html
 
 ### Step 8: Website Verification
-We open the website URL using the IP address
+I opened the website URL using the IP address
 
 http://Public-IP-Address:80
 http://<Public-IP-Address>:80
@@ -351,18 +353,17 @@ http://<Public-IP-Address>:80
 
 ![](Images/Website.png)
 
-### We now have the LEMP stack fully configured. In the next steps, we’ll create a PHP script to test that Nginx is in fact able to handle .php files within your newly configured website.
+### I now have the LEMP stack fully configured. In the next steps, I will create a PHP script to test that Nginx is in fact able to handle .php files within the newly configured website.
 
 
 ## Testing PHP with Nginx
 Now that the LAMP stack is completely installed and fully operational.Testing can be completed to validate that Nginx can correctly handle the  `.php` files off to the PHP processor.
 This can be done by creating a test PHP file in the document root. 
-To get this completed, A new file called `info.php` within the document root in the text editor isN.B : For privacy, the some contents in the page were covered
-
-
- was typed into the new file
-
+ 
+To get this completed, I typed `info.php` into the new file  within the document root of the text editor 
+ 
 ### Accessing the webpage from the web browswer
+ 
 The web page can be accessed using the domain name or public IP address that was set in the 
 Nginx configuration file, followed by /info.php
 
@@ -370,9 +371,10 @@ Nginx configuration file, followed by /info.php
 
 ![](Images/PHPUSE.png)
 
-N.B : For privacy, the some contents in the page were covered
+N.B : For privacy, I covered some contents in the page 
 
 ## Retrieving data from MySQL database with PHP
+ 
 Before we start retrieving data from MySQL data with with PHP,we will first create a test database with a simple "To do list" and configure access so Nginx website would be able to query data from the DB and display the query.
 Note: The native MySQL PHP library mysqlnd doesn’t support caching_sha2_authentication at the time of completing this project therfore the default authentication method for MySQL 8 was used.
 ### Step 1 : connect to the MySQL console using the root account using the command
