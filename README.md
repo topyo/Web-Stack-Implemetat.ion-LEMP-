@@ -72,7 +72,7 @@ Lauched the EC2
 
 ![](Images/Launch2.png)
 
-and Finally I checked the status of the launched EC2 instance by clicking the Launch Status 
+and finally I checked the status of the launched EC2 instance by clicking the Launch Status 
 
 
 ![](Images/LaunchSatus.png)
